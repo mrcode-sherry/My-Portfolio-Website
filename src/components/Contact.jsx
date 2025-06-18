@@ -7,7 +7,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm('mrbklzwn');
 
   return (
-    <div className='px-4 md:px-12 max-w-screen-xl mx-auto'>
+    <div className='px-4 md:px-12 sm:py-12 py-10 md:py-16 mx-auto'>
       {/* Heading */}
       <div className='mb-12 text-center'>
         <p className='uppercase text-[#FF014F] text-sm tracking-widest md:mb-5 mb-2 font-semibold'>Contact</p>
