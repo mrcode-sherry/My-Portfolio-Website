@@ -4,8 +4,8 @@ import React from 'react';
 
 const portfolioItems = [
   {
-    title: 'ZestMart – A Modern eCommerce Store Built Using Next.js and TailwindCSS',
-    image: '/mobile.jpg',
+    title: 'Scalable E-Commerce Website Using Next.js | React | MERN',
+    image: '/portfolio/portfolio1.png',
     category: 'gallery',
     like: '1324'
   },
