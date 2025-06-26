@@ -41,8 +41,8 @@ const Navbar = () => {
           {/* Logo */}
           <div className='flex items-center gap-2'>
             <img
-              className="rounded-full border-[#2E3237] border-4 shadow bg-transparent object-cover w-12 h-12 md:w-14 md:h-14"
-              src="portfolio-image.png"
+              className="rounded-full border-[#2E3237] border-4 shadow bg-transparent object-cover w-12 h-12 md:w-15 md:h-15"
+              src="heroimage/myprofilephoto01.png"
               alt="Profile"
             />
             <p className='uppercase text-[#C4CFDE] text-lg md:text-xl font-semibold'>Hassam</p>

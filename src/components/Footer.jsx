@@ -10,9 +10,9 @@ const Footer = () => {
           <div className='space-y-6'>
             <div className='flex items-center gap-2'>
               <img
-                src='portfolio-image.png' // replace this with your actual logo
+                src='heroimage/myprofilephoto01.png' // replace this with your actual logo
                 alt='logo'
-                className='w-12 h-12 rounded-full object-cover'
+                className='rounded-full border-[#2E3237] border-4 shadow bg-transparent object-cover w-12 h-12 md:w-16 md:h-16'
               />
               <span className='text-lg font-semibold'>HASSAM</span>
             </div>
