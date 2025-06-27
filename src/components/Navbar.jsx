@@ -98,7 +98,7 @@ const Navbar = () => {
             {/* Profile Image */}
             <img
               className="rounded-full w-14 h-14 border-2 border-[#2E3237]"
-              src="portfolio-image.png"
+              src="heroimage/myprofilephoto01.png"
               alt="Profile"
             />
 

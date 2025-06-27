@@ -10,32 +10,82 @@ const portfolioItems = [
     like: '1324'
   },
   {
-    title: 'BookStore Website – Full MERN Stack with User Auth and Cart System',
-    image: '/mobile.jpg',
+    title: 'Figma to React – MERN & Next.js Web Development Solution',
+    image: '/portfolio/portfolio2.png',
     category: 'gallery',
     like: '1324'
   },
   {
-    title: 'TechSparks – IT Training Institute Website Using React and Node.js',
-    image: '/mobile.jpg',
+    title: 'SOP Pharma Webstore Development | Next.js',
+    image: '/portfolio/portfolio3.png',
     category: 'gallery',
     like: '1324'
   },
   {
-    title: 'TechSparks – IT Training Institute Website Using React and Node.js',
-    image: '/mobile.jpg',
+    title: 'Figma to React – Full-Stack Web Development Solution',
+    image: '/portfolio/portfolio4.png',
     category: 'gallery',
     like: '1324'
   },
   {
-    title: 'TechSparks – IT Training Institute Website Using React and Node.js',
-    image: '/mobile.jpg',
+    title: 'MistBuddy™ Shopify E-Commerce Website | Design & Development',
+    image: '/portfolio/portfolio5.png',
     category: 'gallery',
     like: '1324'
   },
   {
-    title: 'TechSparks – IT Training Institute Website Using React and Node.js',
-    image: '/mobile.jpg',
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
+    category: 'gallery',
+    like: '1324'
+  },{
+    title: 'Travall Global Regional Website Design & Development – WordPress',
+    image: '/portfolio/portfolio6.png',
     category: 'gallery',
     like: '1324'
   },
@@ -66,7 +116,7 @@ const Portfolio = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className='w-full h-44 sm:h-52 object-cover rounded-md transform hover:scale-105 transition-transform duration-500 cursor-pointer'
+                className='w-full h-52 rounded-md transform hover:scale-105 transition-transform duration-500 cursor-pointer'
               />
             </div>
 
