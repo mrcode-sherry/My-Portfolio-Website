@@ -1,5 +1,16 @@
+'use client';
+
 import React from 'react';
-import { Code2, Paintbrush, Layers, Rocket, Smartphone, Brush, ArrowUpRight } from 'lucide-react';
+import {
+  Code2,
+  Paintbrush,
+  Layers,
+  Rocket,
+  Smartphone,
+  Brush,
+  ArrowUpRight,
+} from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const features = [
   {
@@ -44,48 +55,78 @@ const features = [
   },
 ];
 
-const Features = () => {
+export default function Features() {
   return (
-    <div className='px-4 sm:px-6 md:px-12 lg:px-24 py-12 md:py-24'>
-      {/* Section Heading */}
-      <div className='mb-12 text-center'>
+    <div className='px-4 sm:px-6 md:px-12 lg:px-24 py-12 md:py-24 overflow-hidden'>
+      {/* Heading */}
+      <motion.div
+        className='mb-12 text-center'
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.1, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <p className='uppercase text-[#FF014F] text-sm sm:text-base tracking-widest font-semibold'>
           Features
         </p>
         <h1 className='text-[32px] sm:text-[40px] md:text-[60px] font-bold text-[#C4CFDE]'>
           What I Do
         </h1>
-      </div>
+      </motion.div>
 
-      {/* Feature Cards */}
+      {/* Cards */}
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className='group bg-[#1F2226] shadow-[8px_8px_15px_-3px_rgba(0,0,0,0.4),_-8px_-8px_15px_-3px_rgba(255,255,255,0.05)] px-8 sm:px-10 md:px-12 py-10 sm:py-12 md:py-14 rounded-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden hover:bg-[#16181C]'
-          >
-            <div className='flex items-center justify-center w-12 h-12 bg-[#FF014F] text-white rounded-full mb-6'>
-              {feature.icon}
-            </div>
-            <h3 className='cursor-pointer font-semibold group-hover:text-[#FFFFFF] text-[20px] sm:text-[22px] text-[#C4CFDE] mb-4'>
-              {feature.title}
-            </h3>
-            <p className='text-[#C4CFDE] text-sm sm:text-[16px] group-hover:text-[#FFFFFF] leading-relaxed cursor-pointer'>
-              {feature.desc}
-            </p>
+        {features.map((feature, index) => {
+          let initial = {};
+          let animate = {};
+          let transition = {
+            delay: index * 0.15,
+            duration: 0.8,
+            ease: 'easeOut',
+          };
 
-            {/* Hover Arrow */}
-            <div className='absolute top-[65px] right-6 cursor-pointer opacity-0 group-hover:bottom-6 group-hover:opacity-100 transition-all duration-300 text-[#FF014F]'>
-              <ArrowUpRight size={30} />
-            </div>
-          </div>
-        ))}
+          // Entry direction
+          if (index % 3 === 0) {
+            initial = { x: -60, opacity: 0 };
+            animate = { x: 0, opacity: 1 };
+          } else if (index % 3 === 1) {
+            initial = { y: 60, opacity: 0 };
+            animate = { y: 0, opacity: 1 };
+          } else {
+            initial = { x: 60, opacity: 0 };
+            animate = { x: 0, opacity: 1 };
+          }
+
+          return (
+            <motion.div
+              key={index}
+              initial={initial}
+              whileInView={animate}
+              transition={transition}
+              viewport={{ once: true, amount: 0.3 }}
+              className='group bg-[#1F2226] shadow-[8px_8px_15px_-3px_rgba(0,0,0,0.4),_-8px_-8px_15px_-3px_rgba(255,255,255,0.05)] px-8 sm:px-10 md:px-12 py-10 sm:py-12 md:py-14 rounded-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden hover:bg-[#16181C]'
+            >
+              <div className='flex items-center justify-center w-12 h-12 bg-[#FF014F] text-white rounded-full mb-6'>
+                {feature.icon}
+              </div>
+              <h3 className='cursor-pointer font-semibold group-hover:text-[#FFFFFF] text-[20px] sm:text-[22px] text-[#C4CFDE] mb-4'>
+                {feature.title}
+              </h3>
+              <p className='text-[#C4CFDE] text-sm sm:text-[16px] group-hover:text-[#FFFFFF] leading-relaxed cursor-pointer'>
+                {feature.desc}
+              </p>
+
+              {/* Arrow */}
+              <div className='absolute top-[65px] right-6 cursor-pointer opacity-0 group-hover:bottom-6 group-hover:opacity-100 transition-all duration-300 text-[#FF014F]'>
+                <ArrowUpRight size={30} />
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* Horizontal Line */}
+      {/* Divider */}
       <div className='h-[0.5px] w-full bg-black mt-24'></div>
     </div>
   );
-};
-
-export default Features;
+}
