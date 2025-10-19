@@ -10,9 +10,8 @@ export default function TypingEffect() {
   useEffect(() => {
     typed.current = new Typed(el.current, {
       strings: [
-        "FULL Stack Developer.",
+        "MERN Stack Developer",
         "SEO Specialist.",
-        "Social Media Manager.",
         "Graphic Designer.",
       ],
       typeSpeed: 70,

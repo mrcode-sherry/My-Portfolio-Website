@@ -3,7 +3,7 @@
 import React from 'react';
 import TypingEffect from './Retype';
 import { motion } from 'framer-motion';
-import { Facebook, Figma, Gem, Handshake, Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 
 // Slow fade-up for text
 const fadeUp = {
@@ -68,7 +68,7 @@ const Hero = () => {
             animate="visible"
             custom={2}
           >
-            I use animation as a third dimension by which to simplify experiences and guide through each and every interaction. I’m not adding motion just to spruce things up, but doing it in meaningful ways.
+           I design captivating user experiences, build high-performance web applications, and implement SEO strategies that drive organic traffic. Let's create a digital product that not only works flawlessly but also gets found.
           </motion.p>
 
           {/* Social & Skills Section */}
@@ -84,7 +84,7 @@ const Hero = () => {
             >
               <p className='text-[#C4CFDE] uppercase text-[14px] tracking-widest'>find with me</p>
               <div className='flex flex-row justify-center sm:justify-start gap-4 mt-4'>
-                {[Facebook, Linkedin, Instagram].map((Icon, index) => (
+                {[Linkedin, Instagram].map((Icon, index) => (
                   <motion.a
                     key={index}
                     href="#"
@@ -98,31 +98,6 @@ const Hero = () => {
                   >
                     <Icon />
                   </motion.a>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Skill Icons */}
-            <motion.div
-              className="text-center sm:text-left"
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={3} // same as "find with me" to sync
-            >
-              <p className='text-[#C4CFDE] uppercase text-[14px] tracking-widest'>best skill on</p>
-              <div className='flex flex-row justify-center sm:justify-start gap-4 mt-4'>
-                {[Figma, Gem, Handshake].map((Icon, index) => (
-                  <motion.div
-                    key={index}
-                    className='bg-gradient-to-r shadow-2xl shadow-black from-[#181A1E] to-[#1D2024] text-[#C4CFDE] px-4 py-4 rounded-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:bg-gradient-to-l'
-                    variants={fastFadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    custom={index} // synced delay like social icons
-                  >
-                    <Icon />
-                  </motion.div>
                 ))}
               </div>
             </motion.div>

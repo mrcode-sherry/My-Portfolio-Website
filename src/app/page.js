@@ -2,6 +2,7 @@ import Blog from "@/components/Blog";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import Resume from "@/components/Resume";
+import Testimonial from "@/components/Testimonial";
 
 
 export default function Home() {
@@ -15,6 +16,12 @@ export default function Home() {
     <div className="mt-25">
       <section>
         <Features/>
+      </section>
+    </div>
+
+    <div className="mt-25">
+      <section>
+        <Testimonial/>
       </section>
     </div>
 
