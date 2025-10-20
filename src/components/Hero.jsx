@@ -87,7 +87,7 @@ const Hero = () => {
                 {[Linkedin, Instagram].map((Icon, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href={index === 0 ? 'https://www.linkedin.com/in/hassam-shahryar-176894291' : 'https://www.instagram.com/hassam_shery?igsh=bjZvN3N1N3FzbGJ2'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className='bg-gradient-to-r shadow-2xl shadow-black from-[#181A1E] to-[#1D2024] text-[#C4CFDE] px-4 py-4 rounded-md cursor-pointer transition-all duration-300 transform hover:scale-105 hover:bg-gradient-to-l'
