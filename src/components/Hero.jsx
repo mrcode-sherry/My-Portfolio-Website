@@ -112,7 +112,7 @@ const Hero = () => {
           transition={{ duration: 1.2, delay: 1, ease: 'easeOut' }}
         >
           <img
-            src="heroimage/myprofilephoto01.png"
+            src="/heroimage/myprofilephoto01.png"
             alt="Profile"
             className="w-[85%] sm:w-[95%] object-cover rounded-xl shadow-lg bg-transparent"
           />

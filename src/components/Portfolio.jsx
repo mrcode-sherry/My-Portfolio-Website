@@ -6,6 +6,34 @@ import { motion } from 'framer-motion';
 
 const portfolioItems = [
   {
+    title: 'Aptitude Counsel Website',
+    image: '/portfolio/portfolio9.png',
+    category: 'gallery',
+    like: '1324',
+    link: 'https://www.aptitudecounsel.com/'
+  },
+  {
+    title: 'Kintechy Website',
+    image: '/portfolio/portfolio10.png',
+    category: 'gallery',
+    like: '1324',
+    link: 'https://www.kintechy.com/'
+  },
+  {
+    title: 'Edify Softech Website',
+    image: '/portfolio/portfolio11.png',
+    category: 'gallery',
+    like: '1324',
+    link: 'https://edify-softech.vercel.app/'
+  },
+  {
+    title: 'Singh Transports Website',
+    image: '/portfolio/portfolio12.png',
+    category: 'gallery',
+    like: '1324',
+    link: 'https://singh-transports.vercel.app/'
+  },
+  {
     title: 'Scalable E-Commerce Website Using Next.js | React | MERN',
     image: '/portfolio/portfolio1.png',
     category: 'gallery',
@@ -18,20 +46,8 @@ const portfolioItems = [
     like: '1324',
   },
   {
-    title: 'SOP Pharma Webstore Development | Next.js',
-    image: '/portfolio/portfolio3.png',
-    category: 'gallery',
-    like: '1324',
-  },
-  {
     title: 'Figma to React – Full-Stack Web Development Solution',
     image: '/portfolio/portfolio4.png',
-    category: 'gallery',
-    like: '1324',
-  },
-  {
-    title: 'MistBuddy™ Shopify E-Commerce Website | Design & Development',
-    image: '/portfolio/portfolio5.png',
     category: 'gallery',
     like: '1324',
   },
@@ -63,41 +79,72 @@ const Portfolio = () => {
       </motion.div>
 
       {/* Portfolio Cards */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-x-7 md:gap-y-12'>
+      <motion.div 
+        className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-x-7 md:gap-y-12'
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.1
+            }
+          }
+        }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {portfolioItems.map((item, index) => {
           // Set animation direction per column
-          let initial, animate;
-          if (index % 3 === 0) {
-            initial = { opacity: 0, x: -60 };
-            animate = { opacity: 1, x: 0 };
-          } else if (index % 3 === 1) {
-            initial = { opacity: 0, y: 20, scale: 0.95 };
-            animate = { opacity: 1, y: 0, scale: 1 };
-          } else {
-            initial = { opacity: 0, x: 60 };
-            animate = { opacity: 1, x: 0 };
-          }
+          const cardVariants = {
+            hidden: { 
+              opacity: 0,
+              y: 50,
+              scale: 0.9
+            },
+            visible: { 
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 12,
+                duration: 0.6,
+                delay: index * 0.1
+              }
+            }
+          };
 
           return (
             <motion.div
               key={index}
               className='bg-[#1F2226] shadow-[8px_8px_15px_-3px_rgba(0,0,0,0.4),_-8px_-8px_15px_-3px_rgba(255,255,255,0.05)] p-6 sm:p-7 rounded-2xl transition-all duration-300 relative overflow-hidden hover:bg-[#16181C]'
-              initial={initial}
-              whileInView={animate}
-              transition={{
-                delay: Math.min(index * 0.1, 0.4),
-                duration: index % 3 === 1 ? 0.9 : 0.6,
-                ease: index % 3 === 1 ? [0.25, 0.8, 0.25, 1] : 'easeOut',
+              variants={cardVariants}
+              whileHover={{ 
+                y: -10,
+                transition: { duration: 0.3 }
               }}
-              viewport={{ once: true, amount: 0.3 }}
             >
               {/* Image */}
               <div className='overflow-hidden rounded-md'>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className='w-full h-52 rounded-md transform hover:scale-105 transition-transform duration-500 cursor-pointer'
-                />
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <motion.img
+                      src={item.image}
+                      alt={item.title}
+                      className='w-full h-52 rounded-md cursor-pointer'
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </a>
+                ) : (
+                  <motion.img
+                    src={item.image}
+                    alt={item.title}
+                    className='w-full h-52 rounded-md cursor-pointer'
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
               </div>
 
               {/* Category + Like */}
@@ -112,15 +159,26 @@ const Portfolio = () => {
 
               {/* Title */}
               <h3 className='text-[#C4CFDE] cursor-pointer hover:text-[#FF014F] text-[15px] sm:text-[17px] md:text-[20px] duration-500 leading-relaxed relative font-semibold mt-4 group'>
-                {item.title.length > 60 ? item.title.slice(0, 50) + '...' : item.title}
-                <span className='absolute opacity-0 group-hover:opacity-100 transition-all duration-300 text-[#FF014F]'>
-                  <ArrowUpRight size={26} className='ml-1 inline' />
-                </span>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className='hover:text-[#FF014F]'>
+                    {item.title.length > 60 ? item.title.slice(0, 50) + '...' : item.title}
+                    <span className='absolute opacity-0 group-hover:opacity-100 transition-all duration-300 text-[#FF014F]'>
+                      <ArrowUpRight size={26} className='ml-1 inline' />
+                    </span>
+                  </a>
+                ) : (
+                  <>
+                    {item.title.length > 60 ? item.title.slice(0, 50) + '...' : item.title}
+                    <span className='absolute opacity-0 group-hover:opacity-100 transition-all duration-300 text-[#FF014F]'>
+                      <ArrowUpRight size={26} className='ml-1 inline' />
+                    </span>
+                  </>
+                )}
               </h3>
             </motion.div>
           );
         })}
-      </div>
+      </motion.div>
 
       {/* Divider */}
       <div className='h-[1px] w-full bg-[#191B1E] mt-20 sm:mt-24'></div>
