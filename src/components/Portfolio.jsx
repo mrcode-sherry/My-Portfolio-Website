@@ -8,54 +8,38 @@ const portfolioItems = [
   {
     title: 'Aptitude Counsel Website',
     image: '/portfolio/portfolio9.png',
-    category: 'gallery',
-    like: '1324',
     link: 'https://www.aptitudecounsel.com/'
   },
   {
     title: 'Kintechy Website',
     image: '/portfolio/portfolio10.png',
-    category: 'gallery',
-    like: '1324',
     link: 'https://www.kintechy.com/'
   },
   {
     title: 'Edify Softech Website',
     image: '/portfolio/portfolio11.png',
-    category: 'gallery',
-    like: '1324',
     link: 'https://edify-softech.vercel.app/'
   },
   {
     title: 'Singh Transports Website',
     image: '/portfolio/portfolio12.png',
-    category: 'gallery',
-    like: '1324',
     link: 'https://singh-transports.vercel.app/'
   },
   {
     title: 'Scalable E-Commerce Website Using Next.js | React | MERN',
     image: '/portfolio/portfolio1.png',
-    category: 'gallery',
-    like: '1324',
   },
   {
     title: 'Figma to React – MERN & Next.js Web Development Solution',
     image: '/portfolio/portfolio2.png',
-    category: 'gallery',
-    like: '1324',
   },
   {
     title: 'Figma to React – Full-Stack Web Development Solution',
     image: '/portfolio/portfolio4.png',
-    category: 'gallery',
-    like: '1324',
   },
   {
     title: 'Travall Global Regional Website Design & Development – WordPress',
     image: '/portfolio/portfolio6.png',
-    category: 'gallery',
-    like: '1324',
   },
 ];
 
@@ -147,18 +131,8 @@ const Portfolio = () => {
                 )}
               </div>
 
-              {/* Category + Like */}
-              <div className='flex justify-between items-center mt-4 sm:mt-5'>
-                <p className='text-[14px] sm:text-[15px] capitalize text-[#FF014F] font-semibold tracking-wider'>
-                  {item.category}
-                </p>
-                <p className='text-[14px] sm:text-[15px] flex items-center tracking-wider'>
-                  <Heart width={14} className='mr-1' />{item.like}
-                </p>
-              </div>
-
               {/* Title */}
-              <h3 className='text-[#C4CFDE] cursor-pointer hover:text-[#FF014F] text-[15px] sm:text-[17px] md:text-[20px] duration-500 leading-relaxed relative font-semibold mt-4 group'>
+              <h3 className='text-[#C4CFDE] cursor-pointer hover:text-[#FF014F] text-[15px] sm:text-[17px] md:text-[20px] duration-500 leading-relaxed relative font-semibold mt-8 group'>
                 {item.link ? (
                   <a href={item.link} target="_blank" rel="noopener noreferrer" className='hover:text-[#FF014F]'>
                     {item.title.length > 60 ? item.title.slice(0, 50) + '...' : item.title}

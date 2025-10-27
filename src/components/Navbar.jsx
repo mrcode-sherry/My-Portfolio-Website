@@ -45,7 +45,7 @@ const Navbar = () => {
               src="heroimage/myprofilephoto01.png"
               alt="Profile"
             />
-            <p className='uppercase text-[#C4CFDE] text-lg md:text-xl font-semibold'>Hassam Shahryar</p>
+            <p className='uppercase text-[#C4CFDE] text-lg md:text-xl font-semibold'>Hassam</p>
           </div>
 
           {/* Desktop Links */}
